@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="ngApp" lang="pt_br">
+    <head>
+        <title>Oficina do M&aacute;gico Luiz</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta name="apple-mobile-web-app-title" content="Oficina do M&aacute;gico Luiz">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' * ws://localhost:35729 data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' localhost:35729 'unsafe-eval' 'unsafe-inline';">
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/theme.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/web-page-style.css">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/map-style.css">
+        <link rel="stylesheet" href="css/map-leaflet-routing-machine.css">
+        <script src="js/lib.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/map-angular-leaflet-directive.min.js"></script>
+        <script src="js/map-leaflet-routing-machine.min.js"></script>
+        <script src="js/map-app.js"></script>
+    </head>
+    <body ng-controller="MainCtrl" ng-class="bodyClass">
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button class="button-icon icon ion-arrow-left-c">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view>
+        </ion-nav-view>
+    </body>
+</html>

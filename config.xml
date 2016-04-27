@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.centroautomotivomagicoluiz.luiz"
+        versionCode = "1"
+        version = "1.0.0">
+
+    <name>Centro Automotivo Mágico Luiz</name>
+
+    <description>
+        Cuidando do seu carro.
+    </description>
+
+    <author href="http://mobiweb.com.br" email="contato@mobiweb.com.br">
+        Equipe Mobi Web
+    </author>
+
+     <preference name="phonegap-version" value="cli-5.2.0" /> 
+
+   <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
+	<icon src="icon.png" />	
+</widget>

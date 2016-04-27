@@ -1,0 +1,72 @@
+<ion-view title="Agendamento">
+    <ion-content padding="true" class="">
+        <div class="transparent">
+            <p>
+                <span style="line-height: 1.42857; color: rgb(99, 99, 99);">Fa&ccedil;a o agendamento do seu servi&ccedil;o usando o formul&aacute;rio abaixo, confirmaremos a marca&ccedil;&atilde;o por email ou telefone.</span>
+                <br>
+            </p>
+        </div>
+        <form style="margin-top:10px" method="post" action="http://www.criadordeapp.mobiweb.com.br/api/v1/widget/post/forms/postForm" id="frm10" novalidate>
+            <input type="hidden" name="sl" value="eyJpdiI6IkZMb25vYm9SeVIxWndTRDJ1QUd4dmc9PSIsInZhbHVlIjoicnRPcUlYRkZNVFRQbTdhUFRZVVM0bFJqNnVFNThHZlVvRHZpMzZTMmtWYz0iLCJtYWMiOiI2YjBmZGZkYjYyZjAwMDBkNzVkMmNlNmYyZWJlYzY4NjM2NDJkZjQ0ODA4YjdlNTEzYzE5NTBhMGM0NGU1MGFjIn0%3D">
+            <div class="list">
+                <textarea name="el-0[]" style="display:none">Nome</textarea>
+                <input type="hidden" name="el-required[0]" value="1">
+                <label class="item item-input">
+                    <span class="input-label">Nome</span>
+                    <input type="text" name="el-0[]">
+                </label>
+                <textarea name="el-1[]" style="display:none">Telefone</textarea>
+                <input type="hidden" name="el-required[1]" value="1">
+                <label class="item item-input">
+                    <span class="input-label">Telefone</span>
+                    <input type="text" name="el-1[]">
+                </label>
+                <textarea name="el-2[]" style="display:none">E-mail</textarea>
+                <input type="hidden" name="el-required[2]" value="1">
+                <label class="item item-input">
+                    <span class="input-label">E-mail</span>
+                    <input type="text" name="el-2[]">
+                </label>
+                <textarea name="el-3[]" style="display:none">Placa</textarea>
+                <input type="hidden" name="el-required[3]" value="1">
+                <label class="item item-input">
+                    <span class="input-label">Placa</span>
+                    <input type="text" name="el-3[]">
+                </label>
+                <textarea name="el-4[]" style="display:none">Data</textarea>
+                <input type="hidden" name="el-required[4]" value="1">
+                <label class="item item-input">
+                    <span class="input-label">Data</span>
+                    <input type="text" name="el-4[]">
+                </label>
+            </div>
+            <button class="button button-block button-positive" type="submit">Enviar</button>
+        </form>
+    </ion-content>
+</ion-view>
+<script>
+$('#frm10').on('submit', function() {
+
+	angular.element($('ion-view')).injector().get("$ionicLoading").show();
+
+	$.ajax({
+		type: 'POST',
+		url: $(this).attr('action'),
+		data: $(this).serialize(),
+		dataType: 'json',
+		success: function(data)
+		{
+			$('#frm10')[0].reset();
+			angular.element($('ion-view')).injector().get("$ionicPopup").alert({
+				title: "Agendamento",
+				template: data.msg,
+				okText: "OK"
+			});
+		}
+	}).always(function() {
+		angular.element($('ion-view')).injector().get("$ionicLoading").hide();
+	});;
+
+	return false;
+});
+</script>
